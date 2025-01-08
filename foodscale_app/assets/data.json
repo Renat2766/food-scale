@@ -1,0 +1,390 @@
+{
+  "slider": [
+    {
+      "id": 1,
+      "imagePath": "assets/images/slider_1.jpg",
+      "title": "Новинка! Стейк из лосося",
+      "description": "Стейк из лосося за 4200 тенге",
+      "fullscreenImagePath": "assets/images/slider_1.jpg"
+    },
+    {
+      "id": 2,
+      "imagePath": "assets/images/slider_2.jpg",
+      "title": "Закажите комбо меню",
+      "description": "Комбо меню за 5600 тенге",
+      "fullscreenImagePath": "assets/images/slider_2.jpg"
+    },
+    {
+      "id": 3,
+      "imagePath": "assets/images/slider_3.jpg",
+      "title": "С Cola вкуснее!",
+      "description": "Напитки за 200 тенге",
+      "fullscreenImagePath": "assets/images/slider_3.jpg"
+    },
+    {
+      "id": 4,
+      "imagePath": "assets/images/slider_4.jpg",
+      "title": "Десерты",
+      "description": "Десерты за 3300 тенге",
+      "fullscreenImagePath": "assets/images/slider_4.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Бургеры"
+    },
+    {
+      "id": 2,
+      "name": "Пиццы"
+    },
+    {
+      "id": 3,
+      "name": "Комбо меню"
+    },
+    {
+      "id": 4,
+      "name": "Закуски"
+    },
+    {
+      "id": 5,
+      "name": "Напитки"
+    },
+    {
+      "id": 6,
+      "name": "Десерты"
+    }
+  ],
+  "addIngredients": [
+    { "id": 1, "name": "Двойной Сыр" },
+    { "id": 2, "name": "Лук" },
+    { "id": 3, "name": "Томаты" },
+    { "id": 4, "name": "Соус" },
+    { "id": 5, "name": "Котлета" },
+    { "id": 6, "name": "Зелень" },
+    { "id": 7, "name": "Халапеньо" },
+    { "id": 8, "name": "Хрустящий бекон" },
+    { "id": 9, "name": "Сырные бортики" },
+    { "id": 10, "name": "Четыре сыра" },
+    { "id": 11, "name": "Моцарелла" },
+    { "id": 12, "name": "Чеснок" },
+    { "id": 13, "name": "Итальянские травы" },
+    { "id": 14, "name": "Чеддер" },
+    { "id": 15, "name": "Жареный лук" },
+    { "id": 16, "name": "Лёд" },
+    { "id": 17, "name": "Острый" },
+    { "id": 18, "name": "Не острый" }
+  ],
+  "ratings": [
+    { "id": 1, "name": "Хит" },
+    { "id": 2, "name": "Новинка" },
+    { "id": 3, "name": "Рекомендуем" },
+    { "id": 4, "name": "Специальное предложение" }
+  ],
+  "sizes": [
+    { "id": 1, "name": "20" },
+    { "id": 2, "name": "25" },
+    { "id": 3, "name": "30" }
+  ],
+  "doughs": [
+    { "id": 1, "name": "Тонкое" },
+    { "id": 2, "name": "Традиционное" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "name": "Чизбургер",
+      "price": 1200,
+      "imagePath": "assets/images/cheeseburger.jpg",
+      "description": "Нежная сочная котлета из 100% говядины, зажатая между двумя мягкими булочками.",
+      "weight": 300,
+      "calories": 500,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false }
+      ],
+      "ratings": [1]
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "name": "Шефбургер",
+      "price": 1500,
+      "imagePath": "assets/images/shefburger.jpg",
+      "description": "Неповторимое сочетание вкусов с авторской говяжьей котлетой и Чеддером.",
+      "weight": 300,
+      "calories": 500,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "name": "Беконатор",
+      "price": 2300,
+      "imagePath": "assets/images/bekonator.jpg",
+      "description": "Две котлеты, шесть ломтиков бекона, сыр чеддер и соус на воздушной булочке.",
+      "weight": 350,
+      "calories": 970,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false },
+        { "id": 8, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "name": "Дабл Бургер",
+      "price": 3600,
+      "imagePath": "assets/images/double-burger.jpg",
+      "description": " сочный сэндвич с двойной говяжьей котлетой, свежими овощами, расплавленным сыром и фирменным соусом, поданным на воздушной булочке.",
+      "weight": 450,
+      "calories": 820,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "name": "Пепперони",
+      "price": 2150,
+      "imagePath": "assets/images/pepperoni.jpg",
+      "description": " это классическая итальянская пицца с тонким тестом, сочным томатным соусом, моцареллой и пикантной колбасой пепперони. Идеальный баланс пряного и сливочного вкусов",
+      "weight": 500,
+      "calories": 1100,
+      "addIngredients": [
+        { "id": 9, "isSelected": false },
+        { "id": 10, "isSelected": false },
+        { "id": 11, "isSelected": false },
+        { "id": 12, "isSelected": false },
+        { "id": 13, "isSelected": false },
+        { "id": 14, "isSelected": false },
+        { "id": 15, "isSelected": false }
+      ],
+      "sizes": [
+        { "id": 1, "price": 2150, "isSelected": true },
+        { "id": 2, "price": 2650 , "isSelected": false },
+        { "id": 3, "price": 3150, "isSelected": false }
+      ],
+      "doughs": [
+        { "id": 1, "isSelected": true },
+        { "id": 2, "isSelected": false }
+      ],
+      "ratings": [2]
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "name": "Карбонара",
+      "price": 2750,
+      "imagePath": "assets/images/carbonara.jpg",
+      "description": " пицца покрыта соусом, который представляет собой сочетание сливок, яиц, сыра пармезан или пекорино, а также бекона или гуанчиале. ",
+      "weight": 500,
+      "calories": 1100,
+      "addIngredients": [
+        { "id": 9, "isSelected": false },
+        { "id": 10, "isSelected": false },
+        { "id": 11, "isSelected": false },
+        { "id": 12, "isSelected": false },
+        { "id": 13, "isSelected": false },
+        { "id": 14, "isSelected": false },
+        { "id": 15, "isSelected": false }
+      ],
+      "sizes": [
+        { "id": 1, "price": 2150, "isSelected": true },
+        { "id": 2, "price": 2650 , "isSelected": false },
+        { "id": 3, "price": 3150, "isSelected": false }
+      ],
+      "doughs": [
+        { "id": 1, "isSelected": true },
+        { "id": 2, "isSelected": false }
+      ],
+      "ratings": [2]
+    },
+    {
+      "id": 7,
+      "categoryId": 2,
+      "name": "Четыре сыра",
+      "price": 2650,
+      "imagePath": "assets/images/4-syira.jpg",
+      "description": " это классическая итальянская пицца, в которой используется сочетание четырех видов сыра.",
+      "weight": 500,
+      "calories": 1100,
+      "addIngredients": [
+        { "id": 9, "isSelected": false },
+        { "id": 10, "isSelected": false },
+        { "id": 11, "isSelected": false },
+        { "id": 12, "isSelected": false },
+        { "id": 13, "isSelected": false },
+        { "id": 14, "isSelected": false },
+        { "id": 15, "isSelected": false }
+      ],
+      "sizes": [
+        { "id": 1, "price": 2150, "isSelected": true },
+        { "id": 2, "price": 2650 , "isSelected": false },
+        { "id": 3, "price": 3150, "isSelected": false }
+      ],
+      "doughs": [
+        { "id": 1, "isSelected": true },
+        { "id": 2, "isSelected": false }
+      ],
+      "ratings": [2]
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "name": "Маргарита",
+      "price": 2950,
+      "imagePath": "assets/images/4-syira.jpg",
+      "description": " это классическая итальянская пицца, в которой используется сочетание четырех видов сыра.",
+      "weight": 500,
+      "calories": 1100,
+      "addIngredients": [
+        { "id": 9, "isSelected": false },
+        { "id": 10, "isSelected": false },
+        { "id": 11, "isSelected": false },
+        { "id": 12, "isSelected": false },
+        { "id": 13, "isSelected": false },
+        { "id": 14, "isSelected": false },
+        { "id": 15, "isSelected": false }
+      ],
+      "sizes": [
+        { "id": 1, "price": 2150, "isSelected": true },
+        { "id": 2, "price": 2650 , "isSelected": false },
+        { "id": 3, "price": 3150, "isSelected": false }
+      ],
+      "doughs": [
+        { "id": 1, "isSelected": true },
+        { "id": 2, "isSelected": false }
+      ],
+      "ratings": [2]
+    },
+    {
+      "id": 9,
+      "categoryId": 3,
+      "name": "Комбо с гамбургером",
+      "price": 4950,
+      "imagePath": "assets/images/kombo-1.png",
+      "description": "Этот комбо идеально подходит для быстрого перекуса или обеда.",
+      "weight": 550,
+      "calories": 750,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 10,
+      "categoryId": 3,
+      "name": "Комбо с донером",
+      "price": 4950,
+      "imagePath": "assets/images/kombo-2.png",
+      "description": "Этот комбо идеально подходит для быстрого перекуса или обеда.",
+      "weight": 550,
+      "calories": 750,
+      "addIngredients": [
+        { "id": 1, "isSelected": false },
+        { "id": 2, "isSelected": false },
+        { "id": 3, "isSelected": false },
+        { "id": 4, "isSelected": false },
+        { "id": 5, "isSelected": false },
+        { "id": 6, "isSelected": false },
+        { "id": 7, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 11,
+      "categoryId": 4,
+      "name": "Салат Цезарь",
+      "price": 1450,
+      "imagePath": "assets/images/salat-cesar.jpg",
+      "description": "Салат Цезарь — классическое блюдо итальянско-американской кухни, состоящее из хрустящих листьев римского салата, заправленных нежным соусом на основе анчоусов, чеснока, пармезана, лимонного сока, оливкового масла и яичных желтков.",
+      "weight": 200,
+      "calories": 600,
+      "ratings": []
+    },
+    {
+      "id": 12,
+      "categoryId": 4,
+      "name": "Салат Оливье",
+      "price": 1630,
+      "imagePath": "assets/images/salat-olivie.png",
+      "description": "Этот салат отличается насыщенным и нежным вкусом, сочетая сытность и свежесть. Его нередко называют символом праздничного стола",
+      "weight": 200,
+      "calories": 400,
+      "ratings": []
+    },
+    {
+      "id": 13,
+      "categoryId": 5,
+      "name": "Апельсиновый сок",
+      "price": 830,
+      "imagePath": "assets/images/orange-juice.jpg",
+      "description": "Апельсиновый сок — натуральный напиток, приготовленный из свежих апельсинов. Обладает ярким сладко-кислым вкусом и богат витаминами, особенно витамином C, а также минералами и антиоксидантами.",
+      "weight": 250,
+      "calories": 45,
+      "addIngredients": [
+        { "id": 16, "isSelected": false }
+      ],
+      "ratings": []
+    },
+    {
+      "id": 14,
+      "categoryId": 6,
+      "name": "Тирамису",
+      "price": 1130,
+      "imagePath": "assets/images/tiramisu.jpg",
+      "description": "Тирамису — популярный итальянский десерт, известный своей нежной и воздушной текстурой.",
+      "weight": 150,
+      "calories": 450,
+      "ratings": []
+    },
+    {
+      "id": 15,
+      "categoryId": 6,
+      "name": "Чизкейк",
+      "price": 1670,
+      "imagePath": "assets/images/cheesecake.jpg",
+      "description": "Чизкейк — популярный десерт, приготовленный на основе мягкого сливочного сыра, сливок и яиц, с нижним слоем из крошки печенья или песочного теста.",
+      "weight": 150,
+      "calories": 450,
+      "ratings": []
+    }
+  ]
+}
