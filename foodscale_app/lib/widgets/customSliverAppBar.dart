@@ -9,16 +9,16 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: whiteColor,
+      backgroundColor: backgroundColor,
       elevation: 0,
       pinned: true,
       automaticallyImplyLeading: false,
-      expandedHeight: 80.0,
+      expandedHeight: 50.0,
       flexibleSpace: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           // Узнаем высоту AppBar (сжатая или расширенная)
           final double appBarHeight = constraints.biggest.height;
-          final double appBarMaxHeight = 80.0;
+          final double appBarMaxHeight = 50.0;
           final bool isExpanded = appBarHeight >= appBarMaxHeight;
 
           return Container(

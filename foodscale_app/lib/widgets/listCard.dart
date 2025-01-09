@@ -43,10 +43,9 @@ class ListCard extends StatelessWidget {
                         SnackBar(content: Text('Кнопка A нажата для $title')),
                       );
                     },
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    icon: Icons.arrow_forward,
-                    label: 'A',
+                    backgroundColor: primaryColor,
+                    foregroundColor: whiteColor,
+                    icon: Icons.shopping_cart,
                   ),
                 ],
               ),
@@ -59,24 +58,16 @@ class ListCard extends StatelessWidget {
                         SnackBar(content: Text('Кнопка B нажата для $title')),
                       );
                     },
-                    backgroundColor: Colors.red,
-                    foregroundColor: Colors.white,
-                    icon: Icons.arrow_back,
-                    label: 'B',
+                    backgroundColor: errorColor,
+                    foregroundColor: whiteColor,
+                    icon: Icons.delete,
                   ),
                 ],
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: whiteColor,
                   borderRadius: BorderRadius.circular(12),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x0F000000), // Легкая тень
-                      blurRadius: 6,
-                      spreadRadius: 0,
-                    ),
-                  ],
                 ),
                 child: Stack(
                   children: [

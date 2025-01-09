@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodscale_app/design/colors.dart';
 import 'package:foodscale_app/widgets/listCard.dart';
 import 'package:foodscale_app/widgets/promokodBanner.dart';
 import 'package:foodscale_app/widgets/buttonMenuWidget.dart';
@@ -21,15 +22,15 @@ class HomePage extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Произошла ошибка при загрузке данных: ${snapshot.error}'));
+            return Center(
+              child: Text('Произошла ошибка при загрузке данных: ${snapshot.error}'),
+            );
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return const Center(child: Text('Данные отсутствуют.'));
           }
 
           final jsonData = snapshot.data!;
           final sliderData = jsonData['slider'] as List<dynamic>? ?? [];
-
-          // Преобразуем sliderData в List<Map<String, String>>
           final sliderList = sliderData.map((data) {
             return {
               "imagePath": data["imagePath"]?.toString() ?? '',
@@ -48,17 +49,31 @@ class HomePage extends StatelessWidget {
               const CustomSliverAppBar(),
               if (sliderList.isNotEmpty)
                 SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      ImageSlider(imageTextList: sliderList), // Передаем только один список
-                      const SizedBox(height: 10),
-                      const PromokodBanner(),
-                      const SizedBox(height: 11),
-                      if (bestProduct != null)
-                        BestOfferWidget(productData: bestProduct, rootRatings: ratings),
-                      const SizedBox(height: 10),
-                    ],
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.vertical(
+                      bottom: Radius.circular(24),
+                    ),
+                    child: Container(
+                      color: backgroundColor,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          ImageSlider(imageTextList: sliderList),
+                          const SizedBox(height: 10),
+                          const PromokodBanner(),
+                          const SizedBox(height: 11),
+                          if (bestProduct != null)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: BestOfferWidget(
+                                productData: bestProduct,
+                                rootRatings: ratings,
+                              ),
+                            ),
+                          const SizedBox(height: 16),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               SliverPersistentHeader(
@@ -66,7 +81,12 @@ class HomePage extends StatelessWidget {
                 delegate: _SliverAppBarDelegate(
                   minHeight: 60.0,
                   maxHeight: 60.0,
-                  child: ButtonMenuWidget(categories: (categoriesData).cast<Map<String, dynamic>>()),
+                  child: Container(
+                    color: whiteColor,
+                    child: ButtonMenuWidget(
+                      categories: (categoriesData).cast<Map<String, dynamic>>(),
+                    ),
+                  ),
                 ),
               ),
               SliverList(
@@ -75,13 +95,16 @@ class HomePage extends StatelessWidget {
                     if (index < products.length) {
                       final product = products[index];
                       if (product is Map<String, dynamic>) {
-                        return ListCard(
-                          data: [product], // Передача данных в виде списка для совместимости с ListCard
-                          rootRatings: ratings,
+                        return Container(
+                          color: whiteColor,
+                          child: ListCard(
+                            data: [product],
+                            rootRatings: ratings,
+                          ),
                         );
                       }
                     }
-                    return const SizedBox(); // Avoid crashing
+                    return const SizedBox();
                   },
                   childCount: products.length,
                 ),
