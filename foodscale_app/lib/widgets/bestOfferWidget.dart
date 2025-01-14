@@ -23,7 +23,7 @@ class BestOfferWidget extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(
-          left: 17, top: 10, right: 17), // Внешние отступы
+           top: 10), // Внешние отступы
       child: Column(
         mainAxisSize: MainAxisSize.min, // Ограничение по высоте
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,15 +39,18 @@ class BestOfferWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10), // Отступ между заголовком и карточкой
 
-          // Используем ProductCard для отображения карточки с рейтингом
-          ProductCard(
-            title: productData['name'] as String,
-            description: productData['description'] as String,
-            imageUrl: productData['imagePath'] as String,
-            price: '${productData['price']} ₸',
-            rating: productRating.isEmpty
-                ? 'Нет рейтинга'
-                : productRating, // Передаем корректный рейтинг
+          // Оборачиваем ProductCard в SizedBox для задания фиксированной ширины
+          SizedBox(
+            width: 375, // Устанавливаем ширину карточки
+            child: ProductCard(
+              title: productData['name'] as String,
+              description: productData['description'] as String,
+              imageUrl: productData['imagePath'] as String,
+              price: '${productData['price']} ₸',
+              rating: productRating.isEmpty
+                  ? 'Нет рейтинга'
+                  : productRating, // Передаем корректный рейтинг
+            ),
           ),
           const SizedBox(height: 10), // Отступ после карточки
         ],
