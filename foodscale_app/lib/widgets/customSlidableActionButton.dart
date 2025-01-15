@@ -20,8 +20,9 @@ class CustomSlidableActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 120,
-      width: 82, // Динамическая ширина
+      width: width,
       color: backgroundColor,
+      alignment: Alignment.center,
       child: IconButton(
         onPressed: onPressed,
         icon: Icon(icon, color: foregroundColor),

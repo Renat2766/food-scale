@@ -3,6 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:foodscale_app/design/colors.dart';
 import 'package:foodscale_app/design/fonts.dart';
+import 'package:foodscale_app/widgets/customSlidableActionButton.dart';
+
+
 
 class ListCard extends StatelessWidget {
   final List<dynamic>? data;
@@ -22,7 +25,6 @@ class ListCard extends StatelessWidget {
     }
 
     return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data!.length,
@@ -30,56 +32,62 @@ class ListCard extends StatelessWidget {
         final item = data![index];
 
         final String title = (item['name'] ?? 'Без названия') as String;
-        final String description = (item['description'] ?? 'Нет описания') as String;
-        final String imageUrl = (item['imagePath'] ?? 'assets/images/default_image.png') as String;
-        final String price = '${item['price'] ?? 'Цена не указана'} ₸';
-        final String rating = getProductRatings(item['ratings'] as List<dynamic>?, rootRatings);
+        final String description =
+            (item['description'] ?? 'Нет описания') as String;
+        final String imageUrl =
+            (item['imagePath'] ?? 'assets/images/default_image.png') as String;
+        final String price =
+            '${item['price'] ?? 'Цена не указана'} ₸';
+        final String rating =
+            getProductRatings(item['ratings'] as List<dynamic>?, rootRatings);
 
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Slidable(
-            key: ValueKey(item['id']),
-            startActionPane: ActionPane(
-              motion: const ScrollMotion(),
-              children: [
-                SlidableAction(
-                  onPressed: (_) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Кнопка A нажата для $title')),
-                    );
-                  },
-                  backgroundColor: primaryColor,
-                  foregroundColor: whiteColor,
-                  icon: Icons.shopping_cart,
-                  padding: EdgeInsets.zero, // Убираем отступы
-                ),
-              ],
-            ),
-            endActionPane: ActionPane(
-              motion: const ScrollMotion(),
-              children: [
-                SlidableAction(
-                  onPressed: (_) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Кнопка B нажата для $title')),
-                    );
-                  },
-                  backgroundColor: errorColor,
-                  foregroundColor: whiteColor,
-                  icon: Icons.delete,
-                  padding: EdgeInsets.zero, // Убираем отступы
-                ),
-              ],
-            ),
-            child: Container(
-              decoration: BoxDecoration(
-                color: whiteColor,
-                borderRadius: BorderRadius.circular(12),
+        return Slidable(
+          key: ValueKey(item['id']),
+          startActionPane: ActionPane(
+            extentRatio: 0.2,
+            motion: const ScrollMotion(),
+            children: [
+              CustomSlidableActionButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Добавлено в корзину: $title')),
+                  );
+                },
+                backgroundColor: primaryColor,
+                foregroundColor: whiteColor,
+                icon: Icons.add_shopping_cart,
+                width: 82,
               ),
+            ],
+          ),
+          endActionPane: ActionPane(
+            extentRatio: 0.2,
+            motion: const ScrollMotion(),
+            children: [
+              CustomSlidableActionButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Удалено: $title')),
+                  );
+                },
+                backgroundColor: errorColor,
+                foregroundColor: whiteColor,
+                icon: Icons.delete,
+                width: 82,
+              ),
+            ],
+          ),
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              color: whiteColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 17),
               child: Stack(
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         width: 100,
@@ -130,54 +138,50 @@ class ListCard extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8, horizontal: 12),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                title,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontFamily: russianFont,
+                                fontWeight: FontWeight.w700,
+                                color: titleColor,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              description,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontFamily: russianFont,
+                                fontWeight: FontWeight.w500,
+                                color: textColor,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFEDEDED),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Text(
+                                price,
                                 style: const TextStyle(
-                                  fontSize: 14,
-                                  fontFamily: russianFont,
+                                  fontSize: 12,
+                                  fontFamily: kazakhFont,
                                   fontWeight: FontWeight.w700,
                                   color: titleColor,
                                 ),
-                                overflow: TextOverflow.ellipsis,
                               ),
-                              const SizedBox(height: 4),
-                              Text(
-                                description,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: russianFont,
-                                  fontWeight: FontWeight.w500,
-                                  color: textColor,
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFEDEDED),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Text(
-                                  price,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: kazakhFont,
-                                    fontWeight: FontWeight.w700,
-                                    color: titleColor,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -187,7 +191,9 @@ class ListCard extends StatelessWidget {
                     bottom: -5,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Логика кнопки
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Кнопка Add нажата для $title')),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero,
