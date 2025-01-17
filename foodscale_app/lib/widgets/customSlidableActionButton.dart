@@ -18,15 +18,17 @@ class CustomSlidableActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 120,
-      width: width,
-      color: backgroundColor,
-      alignment: Alignment.center,
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Icon(icon, color: foregroundColor),
-        iconSize: 30,
+    return SizedBox(
+      height: 120, // Явно указаны размеры
+      width: width, // Ширина передается параметром
+      child: Material(
+        color: backgroundColor,
+        child: InkWell(
+          onTap: onPressed,
+          child: Center(
+            child: Icon(icon, color: foregroundColor, size: 30),
+          ),
+        ),
       ),
     );
   }
